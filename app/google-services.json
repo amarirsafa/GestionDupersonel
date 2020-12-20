@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "698903467995",
+    "project_id": "gestion-du-personel",
+    "storage_bucket": "gestion-du-personel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698903467995:android:951582818c4d56550339fe",
+        "android_client_info": {
+          "package_name": "com.example.gestiondupersonel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698903467995-7k9k4uc76t0q6fejchajl5m062736up0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmHLb6DCLswAGnJm_MiF8asvrHt4ATu9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698903467995-7k9k4uc76t0q6fejchajl5m062736up0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
