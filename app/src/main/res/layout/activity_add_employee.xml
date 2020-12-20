@@ -5,60 +5,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".classes.AddEmployee">
+    tools:context="AddEmployee">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:paddingTop="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:layout_margin="5dp"
+            android:text="Fill in the information of the employee"/>
         <EditText
             android:id="@+id/fullName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Full Name"
+            android:hint="Full Name"
             android:paddingVertical="15dp"
             android:paddingLeft="15dp"
             android:paddingRight="100dp"
             android:layout_marginBottom="5dp"
+            android:background="@drawable/buttomline"
             />
         <EditText
             android:id="@+id/address"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Address"
+            android:hint="Street,city,country"
             android:paddingVertical="15dp"
             android:paddingLeft="15dp"
             android:paddingRight="100dp"
             android:layout_marginBottom="5dp"
+            android:background="@drawable/buttomline"
             />
         <EditText
             android:id="@+id/email"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:hint="example@exp.com"
             android:paddingVertical="15dp"
             android:paddingLeft="15dp"
             android:paddingRight="100dp"
             android:layout_marginBottom="5dp"
+            android:background="@drawable/buttomline"
             />
         <EditText
             android:id="@+id/CIN"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CIN"
+            android:hint="XX0000"
             android:paddingVertical="15dp"
             android:paddingLeft="15dp"
             android:paddingRight="100dp"
             android:layout_marginBottom="5dp"
+            android:background="@drawable/buttomline"
             />
+        <EditText
+            android:id="@+id/birthday"
+            android:inputType="date"
+            android:hint="birthday : MM/DD/YYYY"
+            android:paddingLeft="15dp"
+            android:paddingRight="100dp"
+            android:paddingVertical="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttomline"/>
+        <EditText
+            android:id="@+id/hiringDate"
+            android:inputType="date"
+            android:hint="hiring date : MM/DD/YYYY"
+            android:paddingLeft="15dp"
+            android:paddingRight="100dp"
+            android:paddingVertical="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttomline"/>
         <Button
             android:id="@+id/add"
+            android:textColor="@color/colorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ADD"
-            tools:ignore="InvalidId" />
+            tools:ignore="InvalidId"
+            android:background="@drawable/mybutton"/>
     </LinearLayout>
 
 </LinearLayout>

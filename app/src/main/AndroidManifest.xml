@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddEmployee"></activity>
+        <activity android:name=".EditEmployee"></activity>
+        <activity android:name=".EmployeeActivity" />
+        <activity android:name=".AddEmployee" />
         <activity android:name=".EconomyDep" />
         <activity android:name=".ComputerScienceDep" />
         <activity android:name=".MainActivity">

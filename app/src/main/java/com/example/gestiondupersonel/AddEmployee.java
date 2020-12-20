@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,6 +19,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Date;
 
 public class AddEmployee extends AppCompatActivity {
     private FirebaseFirestore mDataBaseStore;
@@ -50,6 +53,10 @@ public class AddEmployee extends AppCompatActivity {
                 Emp1.setEmail(email.getText().toString());
                 EditText address = findViewById(R.id.address);
                 Emp1.setAddress(address.getText().toString());
+                EditText hiringDate = findViewById(R.id.hiringDate);
+                Emp1.setHiringDate(hiringDate.getText().toString());
+                EditText birthday = findViewById(R.id.birthday);
+                Emp1.setHiringDate(birthday.getText().toString());
 //                dep1.setHeadChef(Emp1);
 //                dep1.setNumberOfEmployees(20);
 //                dep1.setTitle("Computer Science department");

@@ -3,8 +3,7 @@ package com.example.gestiondupersonel.classes;
 import java.util.Date;
 
 public class Employee {
-    private String CIN,address,email,fullName,function;
-    private Date hiringDate,birthDay;
+    private String CIN,address,email,fullName,function,hiringDate,birthDay;
     private int salary;
 
     public Employee(){}
@@ -41,11 +40,11 @@ public class Employee {
         this.fullName = fullName;
     }
 
-    public void setHiringDate(Date hiringDate) {
+    public void setHiringDate(String hiringDate) {
         this.hiringDate = hiringDate;
     }
 
-    public void setBirthDay(Date birthDay) {
+    public void setBirthDay(String birthDay) {
         this.birthDay = birthDay;
     }
 
@@ -65,11 +64,11 @@ public class Employee {
         return fullName;
     }
 
-    public Date getHiringDate() {
+    public String getHiringDate() {
         return hiringDate;
     }
 
-    public Date getBirthDay() {
+    public String getBirthDay() {
         return birthDay;
     }
 }

@@ -1,28 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:ignore="MissingClass">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:padding="5dp"
-            android:id="@+id/fullName"
+        android:background="@drawable/buttomline">
+
+        <LinearLayout
+            android:id="@+id/information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/fullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Full Name"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/CIN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="CIN" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/edit_employee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Full Name"
-            android:textSize="20sp"/>
-        <TextView
-            android:paddingLeft="5dp"
-            android:id="@+id/CIN"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CIN"/>
-    </LinearLayout>
+            android:layout_alignParentRight="true"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/ic_baseline_edit_24" />
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

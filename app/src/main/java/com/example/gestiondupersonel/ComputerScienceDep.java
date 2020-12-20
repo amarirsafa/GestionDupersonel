@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 
 import com.example.gestiondupersonel.classes.Employee;
@@ -58,6 +59,22 @@ public class ComputerScienceDep extends AppCompatActivity {
                 .build();
         adapter = new RecyclerViewAdapter(options);
         recyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
+                String id = documentSnapshot.getId();
+                Intent i = new Intent(ComputerScienceDep.this,EmployeeActivity.class);
+                i.putExtra("id",id);
+                startActivity(i);
+            }
+
+            @Override
+            public void onEditClick(DocumentSnapshot documentSnapshot, int position) {
+                Intent i = new Intent(ComputerScienceDep.this, EditEmployee.class);
+                startActivity(i);
+            }
+        });
     }
     @Override
     public void onStart() {
