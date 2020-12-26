@@ -3,8 +3,16 @@ package com.example.gestiondupersonel.classes;
 import java.util.Date;
 
 public class Employee {
-    private String CIN,address,email,fullName,function,hiringDate,birthDay;
+    private String CIN,address,email,fullName,function,hiringDate,birthDay,department;
     private int salary;
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
 
     public Employee(){}
 

@@ -56,7 +56,7 @@ public class AddEmployee extends AppCompatActivity {
                 EditText hiringDate = findViewById(R.id.hiringDate);
                 Emp1.setHiringDate(hiringDate.getText().toString());
                 EditText birthday = findViewById(R.id.birthday);
-                Emp1.setHiringDate(birthday.getText().toString());
+                Emp1.setBirthDay(birthday.getText().toString());
 //                dep1.setHeadChef(Emp1);
 //                dep1.setNumberOfEmployees(20);
 //                dep1.setTitle("Computer Science department");
