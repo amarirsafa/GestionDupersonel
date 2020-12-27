@@ -21,6 +21,7 @@ public class EditEmployee extends AppCompatActivity {
 
     private FirebaseFirestore mDataBaseStore;
     private DocumentReference documentReference;
+    private EditText fullName,CIN,Address,Email,birthday,hiringDay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,39 +32,60 @@ public class EditEmployee extends AppCompatActivity {
         final String id = i.getStringExtra("id");
         mDataBaseStore = FirebaseFirestore.getInstance();
         assert id != null;
+        fullName = findViewById(R.id.fullName);
+        Address = findViewById(R.id.address);
+        Email = findViewById(R.id.email);
+        CIN = findViewById(R.id.CIN);
+        birthday = findViewById(R.id.birthday);
+        hiringDay = findViewById(R.id.hiringDate);
         documentReference = mDataBaseStore.collection("Company").document("np0SxpArRay4njQeRgH9")
                 .collection("Employees").document(id);
-        findViewById(R.id.editEmp).setOnClickListener(new View.OnClickListener() {
+        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    assert document != null;
+                    if (document.exists()) {
+                        final Employee tempEmployee = document.toObject(Employee.class);
+                        assert tempEmployee != null;
+                        if(tempEmployee.getFullName() != null){
+                            fullName.setText(tempEmployee.getFullName());
+                        }
+                        if(tempEmployee.getCIN() != null){
+                            CIN.setText(tempEmployee.getCIN());
+                        }
+                        if(tempEmployee.getAddress() != null){
+                            Address.setText(tempEmployee.getAddress());
+                        }
+                        if(tempEmployee.getEmail() != null){
+                            Email.setText(tempEmployee.getEmail());
+                        }
+                        if(tempEmployee.getBirthDay() != null){
+                            birthday.setText(tempEmployee.getBirthDay());
+                        }
+                        if(tempEmployee.getHiringDate() != null){
+                            hiringDay.setText(tempEmployee.getHiringDate());
+                        }
+                    } else {
+                        Toast.makeText(EditEmployee.this, "No such document", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(EditEmployee.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        findViewById(R.id.Edit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Employee[] tempEmployee = new Employee[0];
-                final EditText fullName = findViewById(R.id.fullName);
-                final EditText CIN = findViewById(R.id.CIN);
-                final EditText Email = findViewById(R.id.email);
-                final EditText Address = findViewById(R.id.address);
                 documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @SuppressLint("SetTextI18n")
                     @Override
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
                             assert document != null;
                             if (document.exists()) {
-                                tempEmployee[0] = document.toObject(Employee.class);
-                                assert tempEmployee[0] != null;
-                                if(tempEmployee[0].getFullName() != null){
-                                    fullName.setText(tempEmployee[0].getFullName());
-                                }
-                                if(tempEmployee[0].getCIN() != null){
-                                    CIN.setText(tempEmployee[0].getCIN());
-                                }
-                                if(tempEmployee[0].getAddress() != null){
-                                    Address.setText(tempEmployee[0].getAddress());
-                                }
-                                if(tempEmployee[0].getEmail() != null){
-                                    Email.setText(tempEmployee[0].getEmail());
-                                }
-
+                                //documentReference.update("");
                             } else {
                                 Toast.makeText(EditEmployee.this, "No such document", Toast.LENGTH_SHORT).show();
                             }
