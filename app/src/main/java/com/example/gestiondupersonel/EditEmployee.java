@@ -85,7 +85,19 @@ public class EditEmployee extends AppCompatActivity {
                             DocumentSnapshot document = task.getResult();
                             assert document != null;
                             if (document.exists()) {
-                                //documentReference.update("");
+                                //,address,function,hiringDate,birthDay,department
+                                documentReference.update("fullName",fullName.getText().toString(),
+                                        "CIN",CIN.getText().toString(),
+                                                        "address",Address.getText().toString(),
+                                                        "email",Email.getText().toString(),
+                                                        "birthDay",birthday.getText().toString(),
+                                                        "hiringDate",hiringDay.getText().toString())
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                Toast.makeText(EditEmployee.this, "Updating done!", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
                             } else {
                                 Toast.makeText(EditEmployee.this, "No such document", Toast.LENGTH_SHORT).show();
                             }
